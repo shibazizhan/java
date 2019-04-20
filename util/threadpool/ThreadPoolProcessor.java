@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadPoolProcessor<T> {
     // -------以下是默认参数-------
     /**
-     * IO密集型：2*cpu数量 + 1
+     * IO密集型：2*cpu数量 + 1， cpu（计算）密集型：cup数量 + 1
      */
     static final int DEFAULT_MAX_THREAD_NUMBER = 9;
     /**
