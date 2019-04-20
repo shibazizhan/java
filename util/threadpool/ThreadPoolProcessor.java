@@ -112,7 +112,7 @@ public class ThreadPoolProcessor<T> {
 
     private void process(List<T> data, ThreadProcessor<T> threadProcessor) {
         List<List<T>> pageList = ListUtils.divideList(data, pageSize);
-        // 按照最大队列长度分配分页数据，防止超队列
+        // 按照最大队列长度分配分页数据集，防止超队列
         List<List<List<T>>> slices = ListUtils.groupListBalancedly(pageList, maxQueueNum);
         int actualQueueSize = slices.size();
         if (actualQueueSize == 0) {
