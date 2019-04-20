@@ -1,7 +1,5 @@
 package threadpool;
-
-import com.jd.gtr.common.enums.CodeEnum;
-import com.jd.gtr.common.exception.CarGtrException;
+import java.lang.IllegalArgumentException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -117,7 +115,7 @@ public class ThreadPoolBuilder<T> {
 
     public ThreadPoolProcessor<T> build() {
         if (maxQueueNum < threadNum) {
-            throw new CarGtrException(CodeEnum.INTERNAL_SERVICE_ERRORS, "队列数不能小于线程数");
+            throw new IllegalArgumentException("队列数不能小于线程数");
         }
         return new ThreadPoolProcessor<>(threadNum, maxQueueNum, pageSize, biz, stopWhenError);
     }
