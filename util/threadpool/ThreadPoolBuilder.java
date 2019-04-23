@@ -129,7 +129,7 @@ public class ThreadPoolBuilder<T> {
 //                .setThreadNum(5)
 //                .setMaxQueueNum(10)
                 .build()
-                .execute(new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5)),
+                .execute(Arrays.asList(1, 2, 3, 4, 5),
                         pages -> pages.forEach(page -> page.forEach(System.out::println)));
         System.out.println(result.isAllThreadsSuccess());
         System.out.println("耗时" + result.getTimeCost());
